@@ -19,7 +19,7 @@ namespace MyApplication
       //Testing a float variable
       bool Bool_Var = true;
       //Testing a boolean variable
-      string String_Var = "Cool Numbers and Variables!";
+      string String_Var = "Cool Numbers and Variables:";
       //Testing a string variable
       int Cooler_Num = Cool_Num / 2;
       //Dividing the number variable by 2
