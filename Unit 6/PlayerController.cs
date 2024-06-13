@@ -21,10 +21,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Player movement
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput;
         controller.Move(move * moveSpeed * Time.deltaTime);
         
-    }
+        // Jumping
+        if (controller.isGrounded)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+
+                moveDirection.y = jumpForce;
+            }
+        }
+        
+
+        moveDirection.y -= gravity * Time.deltaTime;
+        
+
+        controller.Move(moveDirection * Time.deltaTime);
+    }     
 }
